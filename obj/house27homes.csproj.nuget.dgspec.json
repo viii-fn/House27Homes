@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\irhayeelvis\\House27homes\\house27homes.csproj": {}
+    "C:\\Users\\irhayeelvis\\house27homes\\house27homes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\irhayeelvis\\House27homes\\house27homes.csproj": {
+    "C:\\Users\\irhayeelvis\\house27homes\\house27homes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\irhayeelvis\\House27homes\\house27homes.csproj",
+        "projectUniqueName": "C:\\Users\\irhayeelvis\\house27homes\\house27homes.csproj",
         "projectName": "house27homes",
-        "projectPath": "C:\\Users\\irhayeelvis\\House27homes\\house27homes.csproj",
+        "projectPath": "C:\\Users\\irhayeelvis\\house27homes\\house27homes.csproj",
         "packagesPath": "C:\\Users\\irhayeelvis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\irhayeelvis\\House27homes\\obj\\",
+        "outputPath": "C:\\Users\\irhayeelvis\\house27homes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\irhayeelvis\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -8,6 +8,9 @@
     --text-2: #ffffffa6;
     --trans: all .3s ease-out;
     --space: 1rem;
+    --space-2: .8rem;
+    --b-shad: 5px 5px 7px #000000d8;
+    --l-shad: 5px 5px 7px #00000063;
 }
 
 html, body {
@@ -27,6 +30,16 @@ h1, h2, h3, h4, h5, h6, p, div, img, section {
 
 h1, h2 {
     color: var(--secondary)
+}
+
+button {
+    border: none;
+    background: none;
+    background: var(--secondary);
+    color: var(--primary-2);
+    padding: var(--space-2);
+    border-radius: var(--space);
+    box-shadow: var(--b-shad);
 }
 
 #blazor-error-ui {

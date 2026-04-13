@@ -1,13 +1,3 @@
-:root {
-    --brand: #e40101;
-    --primary: #fff;
-    --primary-2: #e6e6e6;
-    --secondary: #000000;
-    --tertiary: #272727;
-    --text: #000000a6;
-    --text-2: #ffffffa6;
-}
-
 .hero-section {
     display: flex;
     margin: 0;
@@ -19,19 +9,24 @@
 
 .title-section {
     margin: auto;
-    margin-bottom: 20%;
+    margin-bottom: 0;
+    text-align: center;
+    text-shadow: var(--l-shad);
 }
 
 .title-section em {
     background: var(--brand);
     color: var(--primary);
-    padding: var(--space);
+    padding: var(--space-2);
+    border-radius: var(--space-2);
+    box-shadow: var(--l-shad);
 }
 
 .overlay {
     position: absolute;
     background: #ffffff59;
-    height: 100;
+    height: 100%;
+    z-index: 0;
 }
 
 .btn-area {
