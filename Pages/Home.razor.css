@@ -40,3 +40,14 @@
         height: 80vh;
     }
 }
+
+.flex-container {
+    margin: 3rem 0;
+    display: flex;
+    gap: .5rem;
+    padding: 2rem 16px;
+    list-style: none;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    background: var(--secondary-2);
+}

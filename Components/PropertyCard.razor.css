@@ -1,15 +1,18 @@
 .property-card {
     background: var(--primary);
     box-shadow: var(--l-shad);
-    border-radius: var(--space-2);
-    width: 80vw;
+    border-radius: var(--space);
     overflow: hidden;
     scroll-snap-align: center;
     margin: 0 var(--space-2);
+    height: fit-content;
+    width: 70vw;
+    max-width: 400px;
+    flex-shrink: 0;
 }
 
 .image {
-    height: 40vh;
+    height: 250px;
     margin-bottom: .5rem;
     background: #4b000080;
     position: relative;
@@ -17,30 +20,32 @@
 
 .like {
     border-radius: 50%;
-    height: 80px;
-    width: auto;
+    height: 40px;
+    width: 40px;
     background: var(--text);
     box-shadow: var(--l-shadow);
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 10px;
+    left: 10px;
 }
 
-.property-name, .property-location, .property-rating { margin: .5rem auto }
-
-.property-name {
-    margin: .5rem auto;
-    width: 90%;
-}
+.property-name, .property-location, .property-rating { margin: 1rem auto; width: 90%; }
+.property-rating { margin: 1rem auto; }
 
 .property-name h2 {
-    font-weight: 800;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-transform: capitalize;
 }
 
 .property-rating {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
 }
+
+.price { margin-right: 2rem; }
+
+.review { display: flex; flex-direction: column; justify-content: center; }
 
 .price p strong {
     font-size: 1.4rem;
