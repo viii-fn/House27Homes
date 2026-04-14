@@ -1,38 +1,52 @@
 @inject HttpClient Http
 
-@foreach (var data in properties)
+@if (properties == null)
+{
     <div class="property-card">
-        <div class="image">
-            <button class="like"></button>
-        </div>
+        <div class="image"></div>
         <div class="description">
-            <div class="property-name">
-                <h2>@properties.Name</h2>
-            </div>
-
-            <div class="property-location">
-                <p>&blacktriangledown; @properties.Location</p>
-            </div>
-
-            <div class="property-rating">
-                <div class="price">
-                    <p><strong>@properties.Price k</strong>/night</p>
-                </div>
-            
-                <div class="review">&starf; @properties.Review</div>
-            </div>
+            <div class="review"></div>
         </div>
     </div>
+}
+else
+{
+    @foreach (var data in properties)
+    {
+        <div class="property-card">
+            <div class="image">
+                <button class="like"></button>
+            </div>
+            <div class="description">
+                <div class="property-name">
+                    <h2>@data.Name</h2>
+                </div>
+
+                <div class="property-location">
+                    <p>&blacktriangledown; @data.Location</p>
+                </div>
+
+                <div class="property-rating">
+                    <div class="price">
+                        <p><strong>@data.Price k</strong>/night</p>
+                    </div>
+            
+                    <div class="review">&starf; @data.Review</div>
+                </div>
+            </div>
+        </div>
+    }
+}
 
 @code {
-    private PropertyCard[]? properties
+    private Property[]? properties;
 
     protected override async Task OnInitializedAsync()
     {
-        properties = await.HttpGetFromJsonAsync<PropertyCard[]>("sample-data/properties.json");
+        properties = await Http.GetFromJsonAsync<Property[]>("sample-data/properties.json");
     }
 
-    public class PropertyCard
+    public class Property
     {
         public string? Name { get; set; }
         public string? Location { get; set; }
