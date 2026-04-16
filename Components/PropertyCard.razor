@@ -1,73 +1,27 @@
-@inject HttpClient Http
+<div class="property-card">
+    <div class="image">
+        <button class="like"></button>
+    </div>
+    <div class="description">
+        <div class="property-name">
+            <h2>@Property.Name</h2>
+        </div>
 
-@if (properties == null)
-{
-    <div class="property-card">
-        <div class="image"></div>
-        <div class="description">
-            <div class="review"></div>
+        <div class="property-location">
+            <p>@Property.Location</p>
         </div>
-    </div>
-    
-    <div class="property-card">
-        <div class="image"></div>
-        <div class="description">
-            <div class="review"></div>
-        </div>
-    </div>
-    
-    <div class="property-card">
-        <div class="image"></div>
-        <div class="description">
-            <div class="review"></div>
-        </div>
-    </div>
-}
-else
-{
-    @foreach (var data in properties)
-    {
-        <div class="property-card">
-            <div class="image">
-                <button class="like"></button>
+
+        <div class="property-rating">
+            <div class="price">
+                <p><strong>@Property.Price k</strong>/night</p>
             </div>
-            <div class="description">
-                <div class="property-name">
-                    <h2>@data.Name</h2>
-                </div>
-
-                <div class="property-location">
-                    <p>@data.Location</p>
-                </div>
-
-                <div class="property-rating">
-                    <div class="price">
-                        <p><strong>@data.Price k</strong>/night</p>
-                    </div>
             
-                    <div class="review">&starf; @data.Review</div>
-                </div>
-            </div>
+            <div class="review">&starf; @Property.Review</div>
         </div>
-    }
-}
+    </div>
+</div>
 
 @code {
-    private Property[]? properties;
-
-    protected override async Task OnInitializedAsync()
-    {
-        properties = await Http.GetFromJsonAsync<Property[]>("sample-data/properties.json");
-    }
-
-    public class Property
-    {
-        public string? Name { get; set; }
-
-        public string? Location { get; set; }
-
-        public int Price { get; set; }
-        
-        public int Review { get; set; }
-    }
+    [Parameter, EditorRequired]
+    public HomeCard Property { get; set; } = default!;
 }

@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject HttpClient Http
 
 <PageTitle>Home - House27</PageTitle>
 
@@ -19,13 +20,31 @@
 
 <section class="bg">
     <section class="flex-container">
-        <PropertyCard />
+        @foreach (var property in _properties)
+        {
+            <PropertyCard Property="property"/>
+        }
     </section>
-
     <section class="image-grid">
         <div class="grid-title"><h2>Start with what you need</h2></div>
         <div class="grid-container">
-            <ImageCard />
+            @foreach (var cards in _needs)
+            {
+                <ImageCard Cards="cards" />
+            }
         </div>
     </section>
 </section>
+
+@code {
+    private IEnumerable<DisplayCard>? _needs;
+
+    private IEnumerable<HomeCard>? _properties;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _needs = await Http.GetFromJsonAsync<IEnumerable<DisplayCard>>("sample-data/needs.json");
+
+        _properties = await Http.GetFromJsonAsync<IEnumerable<HomeCard>>("sample-data/properties.json");
+    }
+}
