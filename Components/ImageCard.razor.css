@@ -5,6 +5,7 @@
     margin: 1rem auto;
     height: 40vh;
     width: 45%; background: lightgray;
+    box-shadow: var(--s-shad);
 }
 
 .description {
@@ -23,4 +24,4 @@ h2, p {
     text-transform: capitalize;
 }
 
-p { font-size: 14px; }
+p { font-size: 1rem; }

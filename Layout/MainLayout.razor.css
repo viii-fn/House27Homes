@@ -1,31 +1,9 @@
-.page {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
 main {
     overflow-y: hidden;
 }
 
 .sidebar {
-    background: var(--secondary);
-    position: sticky;
-}
-
-@media (min-width: 641px) {
-    .page {
-        flex-direction: row;
-    }
-
-    main {
-	width: 80%;
-    }
-
-    .sidebar {
-        width: 20%;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
 }

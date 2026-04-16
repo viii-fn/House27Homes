@@ -1,7 +1,7 @@
 ﻿<div class="navigation-bar">
     <div class="navigation-brand">
         <a href="">House 27 Homes</a>
-        <div class="navigation-menu @Active" @onclick="ToggleNavMenu">
+        <div class="navigation-menu @NavMenuActive" @onclick="ToggleNavMenu">
             <span></span>
             <span></span>
             <span></span>
@@ -10,40 +10,38 @@
     </div>
 
     <div class="navigation-pages @NavMenuCssClass" @onclick="ToggleNavMenu">
-        <div class="navigation-link">
-            <div class="navigation-item">
-                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                    Home
-                </NavLink>
-            </div>
-            <div class="navigation-item">
-                <NavLink href="counter">
-                    Properties
-                </NavLink>
-            </div>
-            <div class="navigation-item">
-                <NavLink href="weather">
-                    About
-                </NavLink>
-            </div>
-            <div class="navigation-item">
-                <NavLink href="counter">
-                    Blog
-                </NavLink>
-            </div>
-            <div class="navigation-item">
-                <NavLink href="weather">
-                    Contact
-                </NavLink>
-            </div>
+        <div class="nav-item">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                Home
+            </NavLink>
         </div>
+        <div class="nav-item">
+            <NavLink class= "nav-link" href="counter">
+                Properties
+            </NavLink>
+        </div>
+        <div class="nav-item">
+            <NavLink class="nav-link" href="weather">
+                About
+            </NavLink>
+        </div>
+        <div class="nav-item">
+            <NavLink class="nav-link" href="weather">
+                Blog
+            </NavLink>
+        </div>
+        <div class="nav-item">
+            <NavLink class="nav-link" href="weather">
+                Contact
+            </NavLink>
+        </div>
+    </div>
         
-        <div class="stand-alone">
-            <div class="navigation-item">
-                <NavLink href="counter">
-                    Contact
-                </NavLink>
-            </div>
+    <div class="stand-alone">
+        <div class="nav-item">
+            <NavLink class="nav-link" href="weather">
+                Contact
+            </NavLink>
         </div>
     </div>
 </div>
@@ -51,15 +49,15 @@
 @code {
     private bool collapseNavMenu = true;
 
-    private bool folded = false;
+    private bool foldNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string? NavMenuCssClass => collapseNavMenu ? "null" : null;
 
-    private string? Active => folded ? "active" : "";
+    private string? NavMenuActive => foldNavMenu ? null : "active";
 
     private void ToggleNavMenu()
     {
-        folded = !folded;
+        foldNavMenu = !foldNavMenu;
 
         collapseNavMenu = !collapseNavMenu;
     }
