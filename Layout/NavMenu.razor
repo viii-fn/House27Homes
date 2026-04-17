@@ -1,15 +1,9 @@
 ﻿<div class="navigation-bar">
     <div class="navigation-brand">
         <a href="">House 27 Homes</a>
-        <div class="navigation-menu @NavMenuActive" @onclick="ToggleNavMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
     </div>
 
-    <div class="navigation-pages @NavMenuCssClass" @onclick="ToggleNavMenu">
+    <div class="navigation-page @NavMenuCssClass" @onclick="ToggleNavMenu">
         <div class="nav-item">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 Home
@@ -37,12 +31,12 @@
         </div>
     </div>
         
-    <div class="stand-alone">
-        <div class="nav-item">
-            <NavLink class="nav-link" href="weather">
-                Contact
-            </NavLink>
-        </div>
+    
+    <div class="navigation-menu @NavMenuActive" @onclick="ToggleNavMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </div>
 
@@ -51,7 +45,7 @@
 
     private bool foldNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "null" : null;
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private string? NavMenuActive => foldNavMenu ? null : "active";
 
