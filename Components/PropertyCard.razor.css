@@ -41,6 +41,8 @@
 .property-rating {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
 }
 
 .price { margin-right: 1rem; }
