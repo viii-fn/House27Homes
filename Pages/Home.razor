@@ -20,26 +20,47 @@
 
 <section class="bg">
     <section class="flex-container">
-        @foreach (var property in _properties)
+        @if (_properties is null)
         {
-            <PropertyCard Property="property"/>
+            <p>Loading properties...</p>
+        }
+        else
+        {
+            @foreach (var property in _properties)
+            {
+                <PropertyCard Property="property"/>
+            }
         }
     </section>
     <section class="image-grid">
         <div class="grid-title"><h2>Start with what you need</h2></div>
         <div class="grid-container">
-            @foreach (var cards in _needs)
+            @if (_needs is null)
             {
-                <ImageCard Cards="cards" />
+                <p>Loading assets...</p>
+            }
+            else
+            {
+                @foreach (var cards in _needs)
+                {
+                    <ImageCard Cards="cards" />
+                }
             }
         </div>
     </section>
 </section>
 
 <div class="auto-flex auto-scroll">
-    @foreach (var items in _items)
+    @if (_items is null)
     {
-        <ItemCard Items="items" />
+        <p>Loading items...</p>
+    }
+    else
+    {
+        @foreach (var items in _items)
+        {
+            <ItemCard Items="items" />
+        }
     }
 </div>
 
