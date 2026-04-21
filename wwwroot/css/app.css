@@ -14,6 +14,7 @@
     --l-shad: 5px 5px 7px #00000023;
     --s-shad: 0 0 7px #00000043;
     --trans: cubic-bezier(0.68, -0.55, 0.265, 1.75);
+    --bd-line: 1px solid #000000a6;
 }
 
 html, body {
@@ -33,7 +34,13 @@ h1, h2, h3, h4, h5, h6, p, div, img, section, button {
 }
 
 h1, h2 {
-    color: var(--secondary)
+    color: var(--secondary);
+}
+
+.capital {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 button {

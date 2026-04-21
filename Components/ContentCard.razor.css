@@ -1,0 +1,27 @@
+.content-card {
+    width: 90%;
+    box-shadow: var(--l-shad);
+    background: var(--primary-2);
+    padding: 1rem;
+    border-radius: 2rem;
+    margin: 1rem auto;
+    border: var(--bd-line);
+}
+
+.content-card h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--text);
+    margin-bottom: .5rem;
+}
+
+.container p {
+    color: var(--text-2);
+}
+
+@media (min-width: 841px) {
+    .content-card {
+        width: 30%;
+    }
+}
