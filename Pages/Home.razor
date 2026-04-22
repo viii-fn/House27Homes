@@ -28,23 +28,25 @@
         {
             @foreach (var property in _properties)
             {
-                <PropertyCard Property="property"/>
+                <PropertyCard Property="property" />
             }
         }
     </section>
     <section class="image-grid">
         <div class="grid-title"><h2>Start with what you need</h2></div>
-        <div class="grid-container">
-            @if (_needs is null)
-            {
-                <p>Loading assets...</p>
-            }
-            else
-            {
+        @if (_needs is null)
+        {
+            <p>Loading assets...</p>
+        }
+        else
+        {
+            <PropertyDetails
+            <div class="grid-container">
                 @foreach (var cards in _needs)
                 {
                     <ImageCard Cards="cards" />
                 }
+            </div>
             }
         </div>
     </section>
@@ -69,17 +71,17 @@
 </div>
 
 @code {
-    private IEnumerable<DisplayCard>? _needs;
+    private IEnumerable<Properties>? _properties;
 
-    private IEnumerable<HomeCard>? _properties;
+    private IEnumerable<DisplayCard>? _needs;
 
     private IEnumerable<NewArrivals>? _items;
 
     protected override async Task OnInitializedAsync()
     {
-        _needs = await Http.GetFromJsonAsync<IEnumerable<DisplayCard>>("sample-data/needs.json");
+        _properties = await Http.GetFromJsonAsync<IEnumerable<Properties>>("sample-data/properties.json");
 
-        _properties = await Http.GetFromJsonAsync<IEnumerable<HomeCard>>("sample-data/properties.json");
+        _needs = await Http.GetFromJsonAsync<IEnumerable<DisplayCard>>("sample-data/needs.json");
 
         _items = await Http.GetFromJsonAsync<IEnumerable<NewArrivals>>("sample-data/items.json");
     }

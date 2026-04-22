@@ -1,0 +1,39 @@
+.drawer-mask {
+    visibility: hidden;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+    background: #000000;
+    opacity: 0;
+    transition: opacity .5s ease, visibility .5s ease;
+}
+
+.drawer-wrapper.slide > .drawer-mask {
+    opacity: .5;
+    visibility: visible;
+}
+
+.drawer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 35em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: var(--primary);
+    border-left: 2px solid gray;
+    z-index: 100;
+    transform: translateX(110%);
+    transition: transform .5s ease, width .5s ease;
+}
+
+.drawer-wrapper.slide > .drawer {
+    transform: translateX(0);
+}
