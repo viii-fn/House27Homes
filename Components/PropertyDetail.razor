@@ -38,13 +38,13 @@
     private Properties? _activeProperty;
 
     [Parameter, EditorRequired]
-    public Properties? Property { get; set; }
+    public Properties? Details { get; set; }
     
     protected override void OnParametersSet()
     {
-        if (Property != null)
+        if (Details != null)
         {
-            _activeProperty = Property;
+            _activeProperty = Details;
             _isOpen = true;
         }
     }
