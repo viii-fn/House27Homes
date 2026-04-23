@@ -18,10 +18,17 @@
             
             <div class="review">&starf; @Property.Review</div>
         </div>
+
+        <button @onclick="@(async () => await OnSelected.InvokeAsync(Property))">
+            View    
+        </button>
     </div>
 </div>
 
 @code {
     [Parameter, EditorRequired]
     public Properties Property { get; set; } = default!;
+
+    [Parameter]
+    public EventCallback<Property> OnSelected { get; set; }
 }

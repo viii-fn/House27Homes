@@ -26,6 +26,7 @@
         }
         else
         {
+            <PropertyDetail DetailedProperties="_selectedTrail" OnSelected="HandlePropertySelected" />
             @foreach (var property in _properties)
             {
                 <PropertyCard Property="property" />
@@ -33,22 +34,22 @@
         }
     </section>
     <section class="image-grid">
-        <div class="grid-title"><h2>Start with what you need</h2></div>
+        <div class="grid-title">
+            <h2>Start with what you need</h2>
+        </div>
         @if (_needs is null)
         {
             <p>Loading assets...</p>
         }
         else
         {
-            <PropertyDetails
             <div class="grid-container">
                 @foreach (var cards in _needs)
                 {
                     <ImageCard Cards="cards" />
                 }
             </div>
-            }
-        </div>
+        }
     </section>
 </section>
 
@@ -72,6 +73,11 @@
 
 @code {
     private IEnumerable<Properties>? _properties;
+    private Property? _selectedProperty;
+    private void HandlePropertySelected(Property property)
+    {
+        _selectedProperty = property;
+    }
 
     private IEnumerable<DisplayCard>? _needs;
 

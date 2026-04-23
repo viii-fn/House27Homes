@@ -1,7 +1,7 @@
 <div class="drawer-wrapper @(_isOpen ? "slide" : "")">
     <div class="drawer-mask"></div>
     <div class="drawer">
-        @if (_activeCard is not null)
+        @if (_activeProperty is not null)
         {
             <div class="property-card">
                 <div class="image">
@@ -9,27 +9,23 @@
                 </div>
                 <div class="description">
                     <div class="property-name">
-                        <h2>@_activeCard.Name</h2>
+                        <h2>@_activeProperty.Name</h2>
                     </div>
                     
                     <div class="property-location">
-                        <p>@_activeCard.Location</p>
+                        <p>@_activeProperty.Location</p>
                     </div>
                     
                     <div class="property-rating">
                         <div class="price">
-                            <p><strong>@_activeCard.Price</strong></p>
+                            <p><strong>@_activeProperty.Price</strong></p>
                         </div>
                         
-                        <div class="review">&starf; @_activeCard.Review</div>
+                        <div class="review">&starf; @_activeProperty.Review</div>
                     </div>
 
                     <div class="property-location">
-                        <p>@_activeCard.Description</p>
-                    </div>
-
-                    <div class="drawer-controls">
-                        <button class="btn btn-secondary" @onclick="Close">Close</button>
+                        <p>@_activeProperty.Description</p>
                     </div>
                 </div>
             </div>
@@ -39,23 +35,23 @@
 
 @code {
     private bool _isOpen;
-    private Property? _activeCard;
+    private DetailedProperties? _activeProperty;
 
     [Parameter, EditorRequired]
-    public Property? Property { get; set; }
-
+    public DetailedProperties? Property { get; set; }
+    
     protected override void OnParametersSet()
     {
         if (Property != null)
         {
-            _activeCard = Property;
+            _activeProperty = Property;
             _isOpen = true;
         }
     }
 
     private void Close()
     {
-        _activeCard = null;
+        _activeProperty = null;
         _isOpen = false;
     }
 }
