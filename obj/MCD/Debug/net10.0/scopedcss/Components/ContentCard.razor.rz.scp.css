@@ -1,0 +1,27 @@
+.content-card[b-43jkzy2epb] {
+    width: 90%;
+    box-shadow: var(--l-shad);
+    background: var(--primary-2);
+    padding: 1rem;
+    border-radius: 2rem;
+    margin: 1rem auto;
+    border: var(--bd-line);
+}
+
+.content-card h2[b-43jkzy2epb] {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--text);
+    margin-bottom: .5rem;
+}
+
+.container p[b-43jkzy2epb] {
+    color: var(--text-2);
+}
+
+@media (min-width: 841px) {
+    .content-card[b-43jkzy2epb] {
+        width: 30%;
+    }
+}

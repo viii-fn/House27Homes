@@ -1,0 +1,34 @@
+.image[b-8o7n92f1g0] {
+    position: relative;
+    border-radius: var(--space);
+    overflow: hidden;
+    margin: 1rem auto;
+    height: 200px;
+    width: 40%; background: lightgray;
+    box-shadow: var(--s-shad);
+}
+
+@media (min-width: 841px) {
+    .image[b-8o7n92f1g0] {
+	height: 250px;
+	width: 23%;
+    }
+}
+
+.description[b-8o7n92f1g0] {
+    position: absolute;
+    background: linear-gradient(transparent, var(--secondary));
+    height: fit-content;
+    margin: auto;
+    bottom: 0; 
+    width: 100%;
+    height: fit-content;
+}
+
+h2[b-8o7n92f1g0], p[b-8o7n92f1g0] {
+    margin-bottom: .3rem;
+    color: var(--secondary-2);
+    text-transform: capitalize;
+}
+
+p[b-8o7n92f1g0] { font-size: .8rem; }

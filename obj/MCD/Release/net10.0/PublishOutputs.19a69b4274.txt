@@ -1,0 +1,4 @@
+C:\Users\irhayeelvis\house27homes\bin\MCD\Release\net10.0\publish\wwwroot\index.html
+C:\Users\irhayeelvis\house27homes\bin\MCD\Release\net10.0\publish\house27homes.runtimeconfig.json
+C:\Users\irhayeelvis\house27homes\bin\MCD\Release\net10.0\publish\dotnet.js
+C:\Users\irhayeelvis\house27homes\bin\MCD\Release\net10.0\publish\web.config

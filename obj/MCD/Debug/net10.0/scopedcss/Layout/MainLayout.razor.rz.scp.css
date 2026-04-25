@@ -1,0 +1,9 @@
+main[b-qc636ecdem] {
+    overflow-y: hidden;
+}
+
+.sidebar[b-qc636ecdem] {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
