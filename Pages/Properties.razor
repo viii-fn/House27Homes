@@ -1,0 +1,20 @@
+﻿@page "/properties"
+@inject HttpClient Http
+
+<PageTitle>Properties</PageTitle>
+
+@code {
+    private IEnumerable<Properties>? _properties;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _properties = await Http.GetFromJsonAsync<IEnumerable<Properties>>("sample-data/properties.json");
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"There was a problem loading properties data:{ex.Message}");
+        }
+    }
+}
