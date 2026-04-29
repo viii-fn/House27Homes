@@ -56,7 +56,7 @@
 </div>
 
 @code {
-    private IEnumerable<global::Properties>? _properties;
+    private IEnumerable<Properties>? _properties;
 
     private IEnumerable<DisplayCard>? _needs;
 
@@ -66,7 +66,7 @@
     {
         try
         {
-            _properties = await Http.GetFromJsonAsync<IEnumerable<global::Properties>>("sample-data/properties.json");
+            _properties = await Http.GetFromJsonAsync<IEnumerable<Properties>>("sample-data/properties.json");
         }
         catch (HttpRequestException ex)
         {

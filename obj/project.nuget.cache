@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q2wQLdEzS/4=",
+  "dgSpecHash": "w1ciVNLZiKk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\V\\House27Homes\\house27homes.csproj",
+  "projectFilePath": "C:\\Users\\V\\house27homes\\house27homes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\V\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.3\\microsoft.aspnetcore.app.internal.assets.10.0.3.nupkg.sha512",
     "C:\\Users\\V\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.3\\microsoft.aspnetcore.authorization.10.0.3.nupkg.sha512",
@@ -43,9 +43,9 @@
       "code": "NU1900",
       "level": "Warning",
       "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "projectPath": "C:\\Users\\V\\House27Homes\\house27homes.csproj",
+      "projectPath": "C:\\Users\\V\\house27homes\\house27homes.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\V\\House27Homes\\house27homes.csproj",
+      "filePath": "C:\\Users\\V\\house27homes\\house27homes.csproj",
       "targetGraphs": []
     }
   ]

@@ -26,6 +26,7 @@
         }
         else
         {
+            <PropertyDetails Properties="_selectedProperty" />
             @foreach (var property in _properties)
             {
                 <PropertyCard Property="property" />
@@ -71,7 +72,13 @@
 </div>
 
 @code {
-    private IEnumerable<global::Properties>? _properties;
+    private IEnumerable<Properties>? _properties;
+        private Property? _selectedProperty;
+        private void HandleSelectedProperty (Property propertyx)
+        {
+            _selectedProperty = property;
+            StateHasChanged();
+        }
 
     private IEnumerable<DisplayCard>? _needs;
 
@@ -81,7 +88,7 @@
     {
         try
         {
-            _properties = await Http.GetFromJsonAsync<IEnumerable<global::Properties>>("sample-data/properties.json");
+            _properties = await Http.GetFromJsonAsync<IEnumerable<Properties>>("sample-data/properties.json");
         }
         catch (HttpRequestException ex)
         {
