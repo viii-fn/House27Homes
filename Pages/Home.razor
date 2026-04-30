@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using house27homes.Components
 @inject HttpClient Http
 
 <PageTitle>Home - House27</PageTitle>
@@ -20,15 +21,16 @@
 
 <section class="bg">
     <section class="flex-container">
-        @if (_properties is null)
+        @if (_properties == null)
         {
-            <p>Loading properties...</p>
+            <h2>Loading Properties</h2>
         }
         else
         {
-            @foreach (var property in _properties)
+            <PropertyDetail />
+            @foreach (var items in _properties)
             {
-                <PropertyCard Property="property" />
+                <PropertyCard Property="items" />
             }
         }
     </section>
@@ -43,9 +45,9 @@
         else
         {
             <div class="grid-container">
-                @foreach (var cards in _needs)
+                @foreach (var items in _needs)
                 {
-                    <ImageCard Cards="cards" />
+                    <ImageCard Cards="items" />
                 }
             </div>
         }
@@ -71,8 +73,8 @@
 </div>
 
 @code {
-    private IEnumerable<global::Properties>? _properties;
-
+    private IEnumerable<Properties>? _properties;
+    
     private IEnumerable<DisplayCard>? _needs;
 
     private IEnumerable<NewArrivals>? _items;
@@ -81,29 +83,29 @@
     {
         try
         {
-            _properties = await Http.GetFromJsonAsync<IEnumerable<global::Properties>>("sample-data/properties.json");
+            _properties = await Http.GetFromJsonAsync<IEnumerable<Properties>>(requestUri: "sample-data/properties.json");
         }
         catch (HttpRequestException ex)
         {
-            Console.WriteLine($"There was a problem loading properties data:{ex.Message}");
+            Console.WriteLine(value: $"There was a a problem loading properties:{ex.Message}");
         }
 
         try
         {
-            _needs = await Http.GetFromJsonAsync<IEnumerable<DisplayCard>>("sample-data/needs.json");
+            _needs = await Http.GetFromJsonAsync<IEnumerable<DisplayCard>>(requestUri: "sample-data/needs.json");
         }
         catch (HttpRequestException ex)
         {
-            Console.WriteLine($"There was a problem loading assets:{ex.Message}");
+            Console.WriteLine(value: $"There was a problem loading assets:{ex.Message}");
         }
 
         try
         {
-            _items = await Http.GetFromJsonAsync<IEnumerable<NewArrivals>>("sample-data/items.json");
+            _items = await Http.GetFromJsonAsync<IEnumerable<NewArrivals>>(requestUri: "sample-data/items.json");
         }
         catch (HttpRequestException ex)
         {
-            Console.WriteLine($"There was a problem loading items:{ex.Message}");
+            Console.WriteLine(value: $"There was a problem loading items:{ex.Message}");
         }
     }
 }

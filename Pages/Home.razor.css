@@ -20,12 +20,36 @@
 .title-section h1 { color: var(--primary); outline: none; }
 .title-section h1, .title-section p { margin: auto; }
 
-
 @media (min-width: 841px) {
-    .title-section { width: 90%; height: 70%; position: relative; }
-    .title-section h1 { position: absolute; width: fit-content; top: 5%; left: 5%; }
-    .title-section p { position: absolute; width: 30%; background: var(--secondary); box-shadow: var(--b-shad); color: var(--text-2); border-radius: var(--space); bottom: 25%; right: 5%; }
-    .title-section button { position: absolute; margin: 7% 0 0 auto; font-size: 1.1rem; top: 5%; left: 5%; }
+    .title-section {
+        width: 90%;
+        height: 70%; 
+        position: relative; 
+    }
+
+   .title-section h1 { 
+        position: absolute; 
+        width: fit-content; 
+        top: 5%; left: 5%; 
+    }
+
+    .title-section p { 
+        position: absolute; 
+        width: 30%; 
+        background: var(--secondary); 
+        box-shadow: var(--b-shad); 
+        color: var(--text-2); 
+        border-radius: var(--space); 
+        bottom: 25%; 
+        right: 5%; 
+    }
+    .title-section button { 
+        position: absolute; 
+        margin: 7% 0 0 auto; 
+        font-size: 1.1rem; 
+        top: 5%; 
+        left: 5%; 
+    }
 }
 
 .title-section em {
