@@ -3,6 +3,7 @@
         "name": "modern studio apartment in wuse 2",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
+        "rooms": 3,
         "price": 75,
         "review": 5
     },
@@ -11,6 +12,7 @@
         "name": "modern studio apartment in wuse 2",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
+        "rooms": 2,
         "price": 75,
         "review": 5
     },
@@ -19,6 +21,7 @@
         "name": "modern studio apartment in wuse 2",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
+        "rooms": 5,
         "price": 75,
         "review": 5
     },
@@ -27,6 +30,7 @@
         "name": "modern studio apartment in wuse 2",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
+        "rooms": 2,
         "price": 75,
         "review": 5
     },
@@ -35,6 +39,7 @@
         "name": "modern studio apartment in wuse 2",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
+        "rooms": 4,
         "price": 75,
         "review": 5
     },
@@ -43,6 +48,7 @@
         "name": "modern studio apartment in wuse 2",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
+        "rooms": 1,
         "price": 75,
         "review": 5
     },
@@ -51,6 +57,7 @@
         "name": "modern studio apartment in wuse 2",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
+        "rooms": 5,
         "price": 75,
         "review": 5
     }

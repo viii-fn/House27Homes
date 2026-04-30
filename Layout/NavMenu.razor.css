@@ -13,6 +13,7 @@ a {
     justify-content: space-between;
     box-shadow: var(--s-shad);
     backdrop-filter: blur(100px) saturate(500%);
+    -webkit-backdrop-filter: blur(100px) saturate(500%);
     background: rgba(255, 255, 255, 0.3);
     position: relative;
 }
@@ -107,13 +108,13 @@ a {
 @media (min-width: 831px) {
     .navigation-bar {
         backdrop-filter: none;
+        -webkit-backdrop-filter: none;
 	    flex-direction: row;
 	    box-shadow: none;
 	background: none;
     }
 
     .navigation-brand {
-        backdrop-filter: blur(300px);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -122,6 +123,7 @@ a {
         border-radius: 2rem;
         box-shadow: var(--l-shad);
         backdrop-filter: blur(100px);
+        -webkit-backdrop-filter: blur(100px);
         background: rgba(255, 255, 255, 0.3);
     }
 
