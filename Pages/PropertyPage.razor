@@ -11,10 +11,10 @@
         }
         else
         {
-            <PropertyDetail Properties="_selectedProperty" OnSelected="HandleSelectedProperty"/>
+            <PropertyDetail Properties="_selectedProperty" />
             @foreach (var property in _properties)
             {
-                <PropertyCard Property="property" />
+                <PropertyCard Property="property" OnSelected="HandleSelectedProperty" />
             }
         }
     </section>
