@@ -20,7 +20,6 @@
 </section>
 
 <section class="bg">
-    <PropertyDetail />
     <section class="flex-container">
         @if (_properties == null)
         {
@@ -28,6 +27,7 @@
         }
         else
         {
+            <PropertyDetail />
             @foreach (var items in _properties)
             {
                 <PropertyCard Property="items" />
