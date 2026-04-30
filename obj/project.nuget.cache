@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "w1ciVNLZiKk=",
+  "dgSpecHash": "ySXpmeFhimA=",
   "success": true,
   "projectFilePath": "C:\\Users\\V\\house27homes\\house27homes.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,6 @@
     "C:\\Users\\V\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\10.0.3\\microsoft.aspnetcore.components.webassembly.10.0.3.nupkg.sha512",
     "C:\\Users\\V\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\10.0.3\\microsoft.aspnetcore.components.webassembly.devserver.10.0.3.nupkg.sha512",
     "C:\\Users\\V\\.nuget\\packages\\microsoft.aspnetcore.metadata\\10.0.3\\microsoft.aspnetcore.metadata.10.0.3.nupkg.sha512",
-    "C:\\Users\\V\\.nuget\\packages\\microsoft.dotnet.hotreload.webassembly.browser\\10.0.103\\microsoft.dotnet.hotreload.webassembly.browser.10.0.103.nupkg.sha512",
     "C:\\Users\\V\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.3\\microsoft.extensions.configuration.10.0.3.nupkg.sha512",
     "C:\\Users\\V\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.3\\microsoft.extensions.configuration.abstractions.10.0.3.nupkg.sha512",
     "C:\\Users\\V\\.nuget\\packages\\microsoft.extensions.configuration.binder\\10.0.3\\microsoft.extensions.configuration.binder.10.0.3.nupkg.sha512",
@@ -38,15 +37,5 @@
     "C:\\Users\\V\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.3\\microsoft.net.sdk.webassembly.pack.10.0.3.nupkg.sha512",
     "C:\\Users\\V\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\10.0.3\\microsoft.netcore.app.runtime.mono.browser-wasm.10.0.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "projectPath": "C:\\Users\\V\\house27homes\\house27homes.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\V\\house27homes\\house27homes.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }
