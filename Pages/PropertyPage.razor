@@ -11,7 +11,7 @@
         }
         else
         {
-            <PropertyDetail />
+            <PropertyDetail Properties="_selectedProperty" OnSelected="HandleSelectedProperty"/>
             @foreach (var property in _properties)
             {
                 <PropertyCard Property="property" />
@@ -58,6 +58,11 @@
 
 @code {
     private IEnumerable<Properties>? _properties;
+        private Properties? _selectedProperty;
+        private void HandleSelectedProperty(Properties property)
+        {
+            _selectedProperty = property;
+        }
 
     private IEnumerable<DisplayCard>? _needs;
 

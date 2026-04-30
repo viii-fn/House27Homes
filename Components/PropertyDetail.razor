@@ -4,35 +4,35 @@
             <div class="image"></div>
             <div class="description">
                 <div class="property-name">
-                    <h2>modern studio apartment in wuse 2</h2>
+                    <h2>@_activeProperty.Name</h2>
                 </div>
                 
                 <div class="property-location">
-                    <p>abuja, federal capital...</p>
+                    <p>@_activeProperty.Location</p>
                 </div>
 
                 <div class="property-location">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dignissimos labore in repellat quod officia ex molestiae consectetur quo ipsam similique, ullam debitis cum qui dolorem facere obcaecati placeat voluptas autem nobis modi fuga distinctio? Esse quas obcaecati odio. Pariatur fugit asperiores magni veritatis, porro voluptatibus quae fugiat suscipit aperiam.</p>
+                    <p>@_activeProperty.Description</p>
                 </div>
 
                 <div class="property-location">
                     <p>
-                        Number Of Rooms: <strong>4</strong>
+                        Number Of Rooms: <strong>@_activeProperty.Rooms</strong>
                     </p>
                 </div>
 
                 <div class="property-rating">
                     <div class="digits">
-                        <p><strong>75 k</strong>/night</p>
+                        <p><strong>@_activeProperty.Price k</strong>/night</p>
                     </div>
 
                     <div class="digits">
-                        <div class="digits">&starf; 5</div>
+                        <div class="digits">&starf; @_activeProperty.Review</div>
                     </div>
                 </div>
 
                 <div class="property-rating">
-                    <button class="wide-button" @onclick="Active">Close</button>
+                    <button class="wide-button" @onclick="Close">Close</button>
                 </div>
             </div>
         </div>
@@ -40,10 +40,25 @@
 </div>
 
 @code {
-    private bool _open = true;
+    private bool _open;
 
-    private void Active()
+    private Properties? _activeProperty;
+
+    [Parameter, EditorRequired]
+    public Properties Properties { get; set; }
+
+    protected override void OnParametersSet()
     {
-        _open = !_open;
+        if (Properties != null)
+        {
+            _activeProperty = Properties;
+            _open = true;
+        }
+    }
+
+    private void Close()
+    {
+        Properties = null;
+        _open = false;
     }
 }

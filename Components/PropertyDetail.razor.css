@@ -23,7 +23,7 @@
     right: 0;
     bottom: 0;
     transform: translateX(110%);
-    transition: .5s var(--trans);
+    transition: .3s ease;
 }
 
 .drawer-mask.open > .drawer {
