@@ -1,0 +1,53 @@
+<div class="drawer-mask @(_open ? "slide" : "")">
+    <div class="drawer">
+        <div class="item-card gray-background">
+            <div class="item-image"></div>
+            <div class="item-description">
+                <div class="item-name">
+                    <h2>@_activeItem.Name</h2>
+                </div>
+                <div class="item-rating">
+                    <div class="price">
+                        <p><strong>@_activeItem.Price k</strong></p>
+                    </div>
+
+                    <div class="review">&starf; @_activeItem.Rating</div>
+
+                    <div class="item-rating">
+                        <div class="price">
+                            <p><strong>@_activeItem.Info</strong></p>
+                        </div>
+                    </div>
+
+                    <button @onclick="Close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private bool _open;
+
+    private NewArrivals? _activeItem;
+
+    [Parameter, EditorRequired]
+    public NewArrivals NewArrivals { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        if (NewArrivals != null)
+        {
+            _activeItem = NewArrivals;
+
+            _open = true;
+        }
+    }
+
+    private void Close()
+    {
+        _activeItem = null;
+
+        _open = false;
+    }
+}

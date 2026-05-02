@@ -5,4 +5,6 @@ public class NewArrivals
     public int Price { get; set; }
 
     public int Rating { get; set; }
+
+    public string? Info { get; set; }
 }

@@ -11,11 +11,14 @@
 
             <div class="review">&starf; @Items.Rating</div>
         </div>
-	    <button class="wide-button">Place an order</button>
+	    <button class="wide-button" @onclick="@(async () => await OnSelected.InvokeAsync(Items))">Place an order</button>
     </div>
 </div>
 
 @code {
     [Parameter, EditorRequired]
     public NewArrivals Items { get; set; } = default!;
+
+    [Parameter]
+    public EventCallback<NewArrivals> OnSelected { get; set; }
 }
