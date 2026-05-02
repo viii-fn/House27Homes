@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="property-rating">
-                    <button @onclick="Close">Close</button>
+                    <button @onclick="CloseProperty">Close</button>
                 </div>
             </div>
         </div>
@@ -53,9 +53,9 @@
         }
     }
 
-    private void Close()
+    private void CloseProperty()
     {
-        _activeProperty = null;
+        Properties = null;
 
         _open = false;
     }

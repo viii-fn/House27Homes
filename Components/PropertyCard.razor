@@ -20,7 +20,7 @@
         </div>
 
         <div class="property-rating">
-            <button @onclick="@(async () => await OnSelected.InvokeAsync(Property))">
+            <button @onclick="@(async () => await OnSelectedProperty.InvokeAsync(Property))">
                 View
             </button>
         </div>
@@ -32,5 +32,5 @@
     public Properties Property { get; set; } = default!;
 
     [Parameter]
-    public EventCallback<Properties> OnSelected { get; set; }
+    public EventCallback<Properties> OnSelectedProperty { get; set; }
 }

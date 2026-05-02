@@ -19,7 +19,7 @@
                         </div>
                     </div>
 
-                    <button @onclick="Close">Close</button>
+                    <button @onclick="CloseItem">Close</button>
                 </div>
             </div>
         </div>
@@ -44,9 +44,9 @@
         }
     }
 
-    private void Close()
+    private void CloseItem()
     {
-        _activeItem = null;
+        NewArrivals = null;
 
         _open = false;
     }

@@ -5,9 +5,9 @@
 
 <section class="bg">
     <section class="flex-container">
-        @if (_properties is null)
+        @if (_properties == null)
         {
-            <p>Loading properties...</p>
+            <h2>Loading Properties</h2>
         }
         else
         {
@@ -29,9 +29,9 @@
         else
         {
             <div class="grid-container">
-                @foreach (var cards in _needs)
+                @foreach (var items in _needs)
                 {
-                    <ImageCard Cards="cards" />
+                    <ImageCard Cards="items" />
                 }
             </div>
         }
@@ -48,7 +48,7 @@
         <ItemDetail NewArrivals="_selectedItem" />
         @foreach (var items in _items)
         {
-            <ItemCard Items="items" OnSelected="HandleClick" />
+            <ItemCard Items="items" OnSelectedItem="HandleItemSelected" />
         }
     }
 </div>
@@ -60,16 +60,13 @@
 @code {
     private IEnumerable<Properties>? _properties;
         private Properties? _selectedProperty;
-        private void HandleClick(Properties property)
-        {
-            _selectedProperty = property;
-        }
-
+        private void HandlePropertySelected(Properties property) => _selectedProperty = property;
+    
     private IEnumerable<DisplayCard>? _needs;
 
     private IEnumerable<NewArrivals>? _items;
         private NewArrivals? _selectedItem;
-        private void HandleClick(NewArrivals item) => _selectedItem = item;
+        private void HandleItemSelected(NewArrivals item) => _selectedItem = item;
 
     protected override async Task OnInitializedAsync()
     {
@@ -79,7 +76,7 @@
         }
         catch (HttpRequestException ex)
         {
-            Console.WriteLine(value: $"There was a problem loading properties data:{ex.Message}");
+            Console.WriteLine(value: $"There was a a problem loading properties:{ex.Message}");
         }
 
         try
