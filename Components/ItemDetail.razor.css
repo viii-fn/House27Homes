@@ -1,3 +1,21 @@
+.drawer-mask {
+    background: transparent;
+    backdrop-filter: blur(2px) brightness(40%);
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.drawer-mask.open {
+    opacity: 1;
+    visibility: visible;
+}
+
 .drawer {
     position: inherit;
     z-index: 100;

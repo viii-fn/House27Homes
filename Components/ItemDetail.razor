@@ -1,4 +1,4 @@
-<div class="drawer-mask @(_open ? "slide" : "")">
+<div class="drawer-mask @(_open ? "open" : "")">
     <div class="drawer">
         <div class="item-card gray-background">
             <div class="item-image"></div>
@@ -46,7 +46,7 @@
 
     private void CloseItem()
     {
-        NewArrivals = null;
+        _activeItem = null;
 
         _open = false;
     }

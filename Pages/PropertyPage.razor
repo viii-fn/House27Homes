@@ -14,7 +14,7 @@
             <PropertyDetail Properties="_selectedProperty" />
             @foreach (var items in _properties)
             {
-                <PropertyCard Property="items" OnSelected="HandleClick" />
+                <PropertyCard Property="items" OnSelectedProperty="HandlePropertySelected" />
             }
         }
     </section>
