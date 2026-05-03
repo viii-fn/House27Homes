@@ -18,5 +18,26 @@
         "price": 1000,
         "rating": 5,
         "info": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa quae sint autem fugit perspiciatis facere ea, minus magni adipisci non."
+    },
+    
+    {
+        "name": "Large item for home use",
+        "price": 1000,
+        "rating": 5,
+        "info": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa quae sint autem fugit perspiciatis facere ea, minus magni adipisci non."
+    },
+    
+    {
+        "name": "Large item for home use",
+        "price": 1000,
+        "rating": 5,
+        "info": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa quae sint autem fugit perspiciatis facere ea, minus magni adipisci non."
+    },
+    
+    {
+        "name": "Large item for home use",
+        "price": 1000,
+        "rating": 5,
+        "info": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa quae sint autem fugit perspiciatis facere ea, minus magni adipisci non."
     }
 ]

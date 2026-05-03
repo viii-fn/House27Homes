@@ -11,6 +11,7 @@
     --space: 1rem;
     --space-2: .8rem;
     --b-shad: 5px 5px 7px #000000d8;
+    --b-shad2: 5px 5px 7px #0000009c;
     --l-shad: 5px 5px 7px #00000023;
     --s-shad: 0 0 7px #00000043;
     --trans: cubic-bezier(0.68, -0.55, 0.265, 1.75);
@@ -33,6 +34,10 @@ h1, h2, h3, h4, h5, h6, p, div, img, section, button {
     transition: .5s ease;
 }
 
+.float-hover:hover {
+    transform: translateY(-10px);
+}
+
 h1, h2 {
     color: var(--secondary);
 }
@@ -50,6 +55,11 @@ button {
     padding: var(--space-2);
     border-radius: var(--space);
     box-shadow: var(--b-shad);
+}
+
+button:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--b-shad2);
 }
 
 .wide-button {
@@ -204,6 +214,8 @@ code {
         }
     }
 
-.bg-lg {
-    background: rgb(92, 92, 92);
+@media (min-width: 841px) {
+    .wrap {
+        flex-wrap: wrap;
+    }
 }
