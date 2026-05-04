@@ -20,7 +20,7 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: var(--primary);
+    background: var(--secondary-2);
     color: var(--text);
     scroll-behavior: smooth;
     scrollbar-color: var(--tertiary) transparent;

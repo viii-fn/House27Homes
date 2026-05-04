@@ -4,31 +4,35 @@
 
 <PageTitle>Search - House 27</PageTitle>
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="/">Home</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">Search</li>
-    </ol>
-</nav>
+<section class="bg">
+    <section class="flex-container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Search</li>
+            </ol>
+        </nav>
+    </section>
 
-<h2>Search Results for "@SearchTerm"</h2>
+    <h2>Search Results for "@SearchTerm"</h2>
 
-@if (_searchResults == null)
-{
-    <p>Loading Search Results...</p>
-}
-else
-{
-    <PropertyDetail Properties="_selectedProperty" />
-    <div class="grid">
-        @foreach (var items in _searchResults)
+    <section class="flex-container">
+        @if (_searchResults == null)
         {
-            <PropertyCard Property="items" OnSelectedProperty="HandlePropertySelected" />
+            <h2>Loading Search Results...</h2>
         }
-    </div>
-}
+        else
+        {
+            <PropertyDetail Properties="_selectedProperty" />
+            @foreach (var items in _searchResults)
+            {
+                <PropertyCard Property="items" OnSelectedProperty="HandlePropertySelected" />
+            }
+        }
+    </section>
+</section>
 
 @code {
     private IEnumerable<Properties>? _searchResults;
