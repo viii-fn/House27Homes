@@ -1,0 +1,19 @@
+@inject NavigationManager NavManager
+
+<div class="jumbotron">
+    <h1 class="display-4 text-center">Welcome to House 27 Homes</h1>
+    <p class="lead text-center">Find the most beautiful luxury homes</p>
+    <p class="mt-4">
+        <input @onkeydown="SearchForProperty" @bind="_searchTerm" @bind:event="oninput" type="text" placeholder="Search for a property" class="form-control form-control-lg" />
+    </p>
+</div>
+
+@code {
+    private string _searchTerm = "";
+
+    private void SearchForProperty(KeyboardEventArgs args)
+    {
+        if (args.Key != "Enter") return;
+        NavManager.NavigateTo(uri: $"/search/{_searchTerm}");
+    }
+}
