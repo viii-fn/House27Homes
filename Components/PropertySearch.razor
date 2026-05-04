@@ -1,12 +1,8 @@
 @inject NavigationManager NavManager
 
-<div class="jumbotron">
-    <h1 class="display-4 text-center">Welcome to House 27 Homes</h1>
-    <p class="lead text-center">Find the most beautiful luxury homes</p>
-    <p class="mt-4">
-        <input @onkeydown="SearchForProperty" @bind="_searchTerm" @bind:event="oninput" type="text" placeholder="Search for a property" class="form-control form-control-lg" />
-    </p>
-</div>
+<p class="mt-4">
+    <input @onkeydown="SearchForProperty" @bind="_searchTerm" @bind:event="oninput" type="text" placeholder="Search for a property" class="form-control" />
+</p>
 
 @code {
     private string _searchTerm = "";
