@@ -1,7 +1,11 @@
-@page "/search"
+@page "/search/{SearchTerm}"
 
 <PageTitle>Search - House 27</PageTitle>
 
 <br>
+<h2>Search Results for "@SearchTerm"</h2>
 
-<h2>Search Results</h2>
+@code {
+    [Parameter]
+    public string SearchTerm { get; set; } = default!;
+}
