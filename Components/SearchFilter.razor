@@ -1,8 +1,17 @@
+@using house27homes.Pages
 @inject NavigationManager NavManager
 
 <div class="filters">
-    <label for="maxLength">Max Length</label>
-    <input id="maxLength" type="number" class="form-control" @bind="_maxLength" />
+    <label for="maxPrice">Max Price</label>
+    <input id="maxPrice" 
+            type="number" 
+            class="form-control" 
+            @bind="_maxPrice" />
+    <input id="maxRoom" 
+            type="number"
+            class="form-control" 
+            @bind="_maxRoom" />
+
     <button class="btn btn-outline-primary" @onclick="FilterSearchResults">
         Filter
     </button>
@@ -12,16 +21,27 @@
 </div>
 
 @code {
-    private int _maxLength;
-    [Parameter, EditorRequired]
+    private int _maxPrice;
+    private int _maxRoom;
 
+    [Parameter, EditorRequired]
     public string SearchTerm { get; set; } = default!;
 
-    private void FilterSearchResults() => NavManager.NavigateTo(uri: $"/search/{SearchTerm}/maxlength/{_maxLength}");
+    private void FilterSearchResults()
+    {
+        var uriWithQueryString = NavManager.GetUriWithQueryParameters(new Dictionary<string, object?>()
+            {
+                [nameof(SearchPage.MaxPrice)] = _maxPrice == 0 ? null : _maxPrice,
+                [nameof(SearchPage.MaxRoom)] = _maxRoom == 0 ? null : _maxRoom
+            });
+
+        NavManager.NavigateTo(uriWithQueryString);
+    }
     
     private void ClearSearchFilter()
     {
-        _maxLength = 0;
+        _maxPrice = 0;
+        _maxRoom = 0;
         NavManager.NavigateTo(uri: $"/search/${SearchTerm}");
     }
 }

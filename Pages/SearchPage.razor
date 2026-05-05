@@ -1,5 +1,5 @@
 @page "/search/{SearchTerm}"
-@page "/search/{SearchTerm}/maxLength/{MaxLength:int}"
+@page "/search/{SearchTerm}/maxPrice/{MaxPrice:int}"
 @inject HttpClient Http
 @inject NavigationManager NavManager
 
@@ -34,19 +34,26 @@
 </section>
 
 @code {
+    private IEnumerable<Properties> _cachedSearchResults = Array.Empty<Properties>();
+
     private IEnumerable<Properties>? _searchResults;
-        private Properties? _selectedProperty;
+    private Properties? _selectedProperty;
+
     [Parameter] public string SearchTerm { get; set; } = default!;
 
-    [Parameter] public int? MaxLength { get; set; }
+    [Parameter, SupplyParameterFromQuery] public int? MaxPrice { get; set; }
+
+    [Parameter, SupplyParameterFromQuery] public int? MaxRoom { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
             var allProperties = await Http.GetFromJsonAsync<IEnumerable<Properties>>("sample-data/properties.json");
-            
+
             _searchResults = allProperties!.Where(x => x.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase) || x.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));
+
+            _cachedSearchResults = _searchResults;
         }
         catch (HttpRequestException ex)
         {
@@ -54,5 +61,31 @@
         }
     }
 
+    protected override void OnParametersSet() => UpdateFilters();
+
     private void HandlePropertySelected(Properties property) => _selectedProperty = property;
+
+    private void UpdateFilters()
+    {
+        var filters = new List<Func<Properties, bool>>();
+
+            if (MaxPrice is not null && MaxPrice > 0)
+            {
+                filters.Add(x => x.Price <= MaxPrice);
+            }
+
+            if (MaxRoom is not null && MaxRoom > 0)
+            {
+                filters.Add(x => x.Room <= MaxRoom);
+            }
+
+            if (filters.Any())
+            {
+                _searchResults = _cachedSearchResults.Where(property => filters.All(filter => filter(property)));
+            }
+            else
+            {
+                _searchResults = _cachedSearchResults;
+            }
+    }
 }
