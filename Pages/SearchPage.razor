@@ -1,0 +1,91 @@
+@page "/search/{SearchTerm}"
+@page "/search/{SearchTerm}/maxPrice/{MaxPrice:int}"
+@inject HttpClient Http
+@inject NavigationManager NavManager
+
+<PageTitle>Search - House 27</PageTitle>
+
+<section class="bg pt-5 mt-5">
+    <nav aria-label="breadcrumb" class="m-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Search</li>
+        </ol>
+    </nav>
+
+    <h2 class="m-4">Search Results for "@SearchTerm"</h2>
+
+    <section class="flex-container">
+        @if (_searchResults == null)
+        {
+            <h2>Loading Search Results...</h2>
+        }
+        else
+        {
+            <PropertyDetail Properties="_selectedProperty" />
+            @foreach (var items in _searchResults)
+            {
+                <PropertyCard Property="items" OnSelectedProperty="HandlePropertySelected" />
+            }
+        }
+    </section>
+</section>
+
+@code {
+    private IEnumerable<Properties> _cachedSearchResults = Array.Empty<Properties>();
+
+    private IEnumerable<Properties>? _searchResults;
+    private Properties? _selectedProperty;
+
+    [Parameter] public string SearchTerm { get; set; } = default!;
+
+    [Parameter, SupplyParameterFromQuery] public int? MaxPrice { get; set; }
+
+    [Parameter, SupplyParameterFromQuery] public int? MaxRoom { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var allProperties = await Http.GetFromJsonAsync<IEnumerable<Properties>>("sample-data/properties.json");
+
+            _searchResults = allProperties!.Where(x => x.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase) || x.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));
+
+            _cachedSearchResults = _searchResults;
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine(value: $"There was a problem loading property data: {ex.Message}");
+        }
+    }
+
+    protected override void OnParametersSet() => UpdateFilters();
+
+    private void HandlePropertySelected(Properties property) => _selectedProperty = property;
+
+    private void UpdateFilters()
+    {
+        var filters = new List<Func<Properties, bool>>();
+
+            if (MaxPrice is not null && MaxPrice > 0)
+            {
+                filters.Add(x => x.Price <= MaxPrice);
+            }
+
+            if (MaxRoom is not null && MaxRoom > 0)
+            {
+                filters.Add(x => x.Rooms <= MaxRoom);
+            }
+
+            if (filters.Any())
+            {
+                _searchResults = _cachedSearchResults.Where(property => filters.All(filter => filter(property)));
+            }
+            else
+            {
+                _searchResults = _cachedSearchResults;
+            }
+    }
+}

@@ -11,6 +11,7 @@
     --space: 1rem;
     --space-2: .8rem;
     --b-shad: 5px 5px 7px #000000d8;
+    --b-shad2: 5px 5px 7px #0000009c;
     --l-shad: 5px 5px 7px #00000023;
     --s-shad: 0 0 7px #00000043;
     --trans: cubic-bezier(0.68, -0.55, 0.265, 1.75);
@@ -19,7 +20,7 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: var(--primary);
+    background: var(--secondary-2);
     color: var(--text);
     scroll-behavior: smooth;
     scrollbar-color: var(--tertiary) transparent;
@@ -31,6 +32,10 @@ h1, h2, h3, h4, h5, h6, p, div, img, section, button {
     padding: 0;
     font-weight: 300;
     transition: .5s ease;
+}
+
+.float-hover:hover {
+    transform: translateY(-10px);
 }
 
 h1, h2 {
@@ -49,12 +54,25 @@ button {
     color: var(--primary-2);
     padding: var(--space-2);
     border-radius: var(--space);
-    box-shadow: var(--b-shad);
+    box-shadow: var(--l-shad);
+    transition: .3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: var(--b-shad2);
+    background: var(--primary-2);
+    color: var(--secondary);
+    box-shadow: inset var(--l-shad), var(--l-shad);
 }
 
 .wide-button {
     width: 100%;
     margin: 2rem auto 0 auto;
+}
+
+.wide-button:hover {
+    transform: scale(1.05);
 }
 
 #blazor-error-ui {
@@ -145,7 +163,7 @@ code {
     gap: .5rem;
     padding: 2rem 16px;
     list-style: none;
-    overflow-x: scroll;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
 }
 
@@ -203,3 +221,9 @@ code {
             height: fit-content;
         }
     }
+
+@media (min-width: 841px) {
+    .wrap {
+        flex-wrap: wrap;
+    }
+}

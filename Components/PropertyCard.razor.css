@@ -12,10 +12,24 @@
 }
 
 .image {
-    height: 150px;
+    min-height: 150px;
     margin-bottom: .5rem;
     background: lightgray;
     position: relative;
+}
+
+.image > img {
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    .image {
+	    min-height: 200px;
+    }
+}
+
+.property-card:hover > .image > img {
+    scale: 1.1;
 }
 
 .like {
@@ -54,10 +68,4 @@
 .price p strong {
     font-size: 1.2rem;
     color: var(--secondary);
-}
-
-@media (min-width: 800px) {
-    .image {
-	    height: 200px;
-    }
 }

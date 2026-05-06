@@ -12,6 +12,7 @@
         </h1> <br>
         <p class="px-5 py-4">
             Find the space your soul recognizes with expertly curated properties, trusted local agents, and a seamless experience. <br> <i>Let us guide you home.</i>
+            <PropertySearch />
         </p>
         <div class="btn-area">
             <button>Learn More</button>
@@ -30,7 +31,7 @@
             <PropertyDetail Properties="_selectedProperty" />
             @foreach (var items in _properties)
             {
-                <PropertyCard Property="items" OnSelected="HandleSelectedProperty" />
+                <PropertyCard Property="items" OnSelectedProperty="HandlePropertySelected" />
             }
         }
     </section>
@@ -54,7 +55,7 @@
     </section>
 </section>
 
-<div class="auto-flex auto-scroll">
+<div class="auto-flex auto-scroll wrap bg-white">
     @if (_items is null)
     {
         <p>Loading items...</p>
@@ -75,10 +76,7 @@
 @code {
     private IEnumerable<Properties>? _properties;
         private Properties? _selectedProperty;
-        private void HandleSelectedProperty(Properties property)
-        {
-            _selectedProperty = property;
-        }
+        private void HandlePropertySelected(Properties property) => _selectedProperty = property;
     
     private IEnumerable<DisplayCard>? _needs;
 

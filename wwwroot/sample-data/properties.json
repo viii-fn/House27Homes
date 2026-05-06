@@ -5,43 +5,48 @@
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
         "rooms": 3,
         "price": 75,
-        "review": 5
+        "review": 5,
+        "image": "assets/img/bg.jpg"
     },
     
     {
-        "name": "modern studio apartment in wuse 2",
+        "name": "modern studio apartment in wuye",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
         "rooms": 2,
         "price": 75,
-        "review": 5
+        "review": 5,
+        "image": "assets/img/bg.jpg"
     },
     
     {
-        "name": "modern studio apartment in wuse 2",
+        "name": "modern studio apartment in karasana",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
         "rooms": 5,
         "price": 75,
-        "review": 5
+        "review": 5,
+        "image": "assets/img/bg.jpg"
     },
     
     {
-        "name": "modern studio apartment in wuse 2",
+        "name": "modern studio apartment in maitama",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
         "rooms": 2,
         "price": 75,
-        "review": 5
+        "review": 5,
+        "image": "assets/img/bg.jpg"
     },
     
     {
-        "name": "modern studio apartment in wuse 2",
+        "name": "modern studio apartment in asocoro",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
         "rooms": 4,
         "price": 75,
-        "review": 5
+        "review": 5,
+        "image": "assets/img/bg.jpg"
     },
     
     {
@@ -50,15 +55,37 @@
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
         "rooms": 1,
         "price": 75,
-        "review": 5
+        "review": 5,
+        "image": "assets/img/bg.jpg"
     },
     
     {
-        "name": "modern studio apartment in wuse 2",
+        "name": "modern studio apartment in jabi",
         "location": "abuja, federal capital...",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
         "rooms": 5,
         "price": 75,
-        "review": 5
+        "review": 5,
+        "image": "assets/img/bg.jpg"
+    },
+    
+    {
+        "name": "modern studio apartment in gwarinpa",
+        "location": "abuja, federal capital...",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
+        "rooms": 5,
+        "price": 75,
+        "review": 5,
+        "image": "assets/img/bg.jpg"
+    },
+    
+    {
+        "name": "modern studio apartment in jabi",
+        "location": "abuja, federal capital...",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quam voluptatum accusamus magnam in aliquid reiciendis necessitatibus pariatur, distinctio similique, consequuntur officia debitis voluptates vero inventore quas quo. Nemo, dolore.",
+        "rooms": 5,
+        "price": 75,
+        "review": 5,
+        "image": "assets/img/bg.jpg"
     }
 ]

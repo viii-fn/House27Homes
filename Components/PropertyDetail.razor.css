@@ -1,6 +1,6 @@
 .drawer-mask {
     background: transparent;
-    backdrop-filter: blur(2px) brightness(40%);
+    backdrop-filter: brightness(20%);
     position: fixed;
     z-index: 99;
     top: 0;
@@ -9,6 +9,7 @@
     bottom: 0;
     opacity: 0;
     visibility: hidden;
+    overflow-y: auto;
 }
 
 .drawer-mask.open {
@@ -23,7 +24,7 @@
     right: 0;
     bottom: 0;
     transform: translateX(110%);
-    transition: .3s ease;
+    transition: .2s ease;
 }
 
 .drawer-mask.open > .drawer {
@@ -47,21 +48,20 @@
 }
 
 .image {
-    height: 150px;
+    min-height: 150px;
     margin-bottom: .5rem;
     background: lightgray;
     position: relative;
 }
 
-.like {
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    background: var(--text);
-    box-shadow: var(--l-shadow);
-    position: absolute;
-    top: 20px;
-    left: 20px;
+.image > img {
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    .image {
+	    min-height: 200px;
+    }
 }
 
 .property-name, .property-location, .property-rating { margin: 1rem auto; width: 90%; }
